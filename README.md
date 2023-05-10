@@ -9,6 +9,7 @@ their fingertips.
 To run this application in your browser, simply follow these steps:
     1. Fork and clone down this repository to your local machine
     2. CD into the applications directory from the terminal
-    3. In your terminal type: npm run dev
-    4. Open your browser to http://localhost:5173/
-    5. Ask Dean's Chatbot any question you might have!
+    3. In your terminal type: npm install
+    4. In your terminal type: npm run dev
+    5. Open your browser to http://localhost:5173/
+    6. Ask Dean's Chatbot any question you might have!
