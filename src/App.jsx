@@ -5,13 +5,13 @@ import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator} from '@chatscope/chat-ui-kit-react'
 
-const API_KEY = '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'
+const key = import.meta.env.VITE_API_KEY
 
 function App() {
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I am a Dean's chatbot!",
+      message: "Hello, I am Dean's chatbot!",
       sender: "ChatGPT"
     }
   ])
@@ -55,7 +55,7 @@ function App() {
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer " + API_KEY,
+        "Authorization": "Bearer " + key,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(apiRequestBody)
@@ -87,7 +87,7 @@ function App() {
               return <Message key={i} model={message} />
             })}
           </MessageList>
-          <MessageInput placeholder='Type here' onSend = { handleSend}/>
+          <MessageInput placeholder='Type here' onSend = { handleSend }/>
         </ChatContainer>
       </MainContainer>
 
